@@ -1,0 +1,367 @@
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+body {
+  background-color: #22374b;
+  height: 100%;
+}
+label {
+  font-family: "Cabin", sans-serif;
+}
+nav {
+  background: #0082e6;
+  height: 80px;
+  width: 100%;
+  font-family: "Inter", sans-serif;
+  font-family: "Cabin", sans-serif;
+}
+label.logo {
+  color: white;
+  font-size: 35px;
+  line-height: 80px;
+  padding: 0 100px;
+  font-weight: bold;
+  cursor: pointer;
+}
+nav ul {
+  float: right;
+  margin-right: 20px;
+}
+nav ul li {
+  display: inline-block;
+  line-height: 80px;
+  margin: 0 5px;
+}
+nav ul li a {
+  color: white;
+  font-size: 17px;
+  padding: 7px 13px;
+  border-radius: 3px;
+  text-transform: uppercase;
+}
+a.active,
+a:hover {
+  background: #1b9bff;
+  transition: 0.5s;
+}
+.checkbtn {
+  font-size: 30px;
+  color: white;
+  float: right;
+  line-height: 80px;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+}
+#check {
+  display: none;
+}
+@media (max-width: 952px) {
+  label.logo {
+    font-size: 30px;
+    padding-left: 50px;
+  }
+  nav ul li a {
+    font-size: 16px;
+  }
+}
+@media (max-width: 858px) {
+  .checkbtn {
+    display: block;
+  }
+  ul {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #a83cd3;
+    top: 80px;
+    left: -100%;
+    text-align: center;
+    transition: all 0.5s;
+  }
+  nav ul li {
+    display: block;
+    margin: 50px 0;
+    line-height: 30px;
+  }
+  nav ul li a {
+    font-size: 20px;
+  }
+  a:hover,
+  a.active {
+    background: none;
+    color: #0082e6;
+  }
+  #check:checked ~ ul {
+    left: 0;
+  }
+}
+
+/* wave effect */
+#button {
+  position: relative;
+  padding-top: 4%;
+  padding-bottom: 4%;
+  border: 2px solid #00aeff;
+  border-radius: 100px;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 18px;
+  letter-spacing: 2px;
+  color: #00aeff;
+  text-decoration: none;
+  height: 200px;
+  width: 200px;
+  overflow: hidden;
+  display: inline-block;
+  margin: 0px 0px 100px 450px;
+}
+
+#button span {
+  position: relative;
+  z-index: 1;
+  transition: 1s;
+  color: #55bae9;
+}
+#button:hover span {
+  color: #fff;
+}
+#button .wave {
+  position: absolute;
+  top: calc(100% + 22px);
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #00aeff;
+  transition: 1s;
+}
+#button:hover .wave {
+  top: 0;
+}
+#button .wave::before {
+  content: "";
+  position: absolute;
+  top: -22px;
+  left: 0;
+  width: 100%;
+  height: 22px;
+  background: url(image/wave.png);
+  animation: animate 0.5s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: 118px;
+  }
+}
+
+#about {
+  width: 100%;
+  height: 100px;
+  display: grid;
+  grid-template-columns: 200px 200px auto 200px;
+  align-items: center;
+  padding: 0px 800px;
+}
+#about span {
+  color: #ffffff;
+}
+
+#contact {
+  background-color: "";
+  width: 100%;
+  height: 100px;
+  display: grid;
+  grid-template-columns: 200px 200px auto 200px;
+  align-items: center;
+  padding: 0px 800px;
+}
+
+/*jelly fish */
+.s1 {
+  position: absolute;
+  height: 450px;
+  top: 20%;
+  right: 5%;
+  animation-name: example;
+  animation-duration: 4s;
+}
+
+.s3 {
+  position: absolute;
+  height: 350px;
+  top: 10%;
+  left: 1%;
+}
+
+/*bubble */
+.bubbleWrapper {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.bubbleWrapper span {
+  position: absolute;
+  bottom: 0px;
+  background-color: transparent;
+  box-shadow: inset 0px 0px 10px #ffffff80;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: moveBubbles 3.5s linear infinite;
+}
+
+@keyframes moveBubbles {
+  from {
+    transform: translateY(0%);
+  }
+  to {
+    transform: translateY(-1300%);
+  }
+}
+
+.cardcontainer {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  width: 40%;
+}
+
+.card:hover {
+  transform: scale(1.5);
+}
+
+.container {
+  padding: 2px 16px;
+}
+
+/* resume page */
+.resume1 {
+  text-align: center;
+  width: 450px;
+  margin: auto;
+  color: #fff;
+}
+
+.resume2 {
+  text-align: center;
+  width: 450px;
+  margin: auto;
+  color: #fff;
+}
+
+.resume3 {
+  text-align: center;
+  width: 450px;
+  margin: auto;
+  color: #fff;
+}
+
+/* game page */
+
+.gamebody {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom, lightblue, darkblue);
+}
+.container1 {
+  width: 800px;
+  height: 500px;
+}
+
+#canvas1 {
+  width: 800px;
+  height: 500px;
+  border: 4px solid black;
+  background: linear-gradient(to bottom, lightblue, darkblue);
+}
+
+article {
+  font-family: monospace;
+  color: white;
+  width: 100%;
+  color: black;
+  font-size: 20px;
+  text-shadow: 1px 1px 1px #737373;
+  background: darkblue;
+  left: 0;
+  top: 0;
+  width: 100%;
+  text-align: center;
+  height: 30px;
+  line-height: 30px;
+  padding-right: 20px;
+}
+article span,
+article span > a {
+  color: white;
+}
+
+footer1 {
+  font-family: monospace;
+  position: absolute;
+  width: 100%;
+  color: white;
+  font-size: 15px;
+  text-shadow: 1px 1px 1px #737373;
+  background: rgba(0, 0, 0, 0.5);
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  height: 30px;
+  line-height: 30px;
+  padding-right: 20px;
+}
+footer a {
+  color: white;
+}
+
+@media all and (max-width: 500px) {
+  #banner {
+    margin: 0px auto;
+    width: 100%;
+  }
+}
+
+@media all and (max-width: 500px) {
+  .s1 {
+    height: 100px;
+  }
+}
+@media all and (max-width: 500px) {
+  .s3 {
+    height: 100px;
+  }
+}
+@media all and (max-width: 500px) {
+  #button {
+    height: 100px;
+    width: 100px;
+  }
+}
+
+@media all and (max-width: 500px) {
+  #web {
+    margin: 0px auto;
+    width: 100%;
+  }
+}
